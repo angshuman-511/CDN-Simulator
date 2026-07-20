@@ -1,0 +1,29 @@
+# CDN Simulator Batch Request File
+# Format: City Filename
+# Lines starting with # are comments
+
+Mumbai logo.png
+Delhi home.html
+Bangalore video.mp4
+Mumbai home.html
+Delhi logo.png
+Chennai style.css
+Hyderabad app.js
+Mumbai logo.png
+Pune data.json
+Jaipur banner.jpg
+Delhi home.html
+Bangalore logo.png
+Mumbai video.mp4
+Lucknow api.php
+Goa style.css
+Mumbai logo.png
+Delhi home.html
+Chennai video.mp4
+Bangalore data.json
+Mumbai app.js
+Delhi style.css
+Hyderabad banner.jpg
+Bangalore api.php
+Mumbai logo.png
+Jaipur home.html
