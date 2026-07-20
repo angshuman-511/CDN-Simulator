@@ -12,7 +12,6 @@
 4. [Architecture Diagram](#-architecture-diagram)
 5. [How a Request Flows Through the System](#-how-a-request-flows-through-the-system)
 6. [How to Build and Run](#-how-to-build-and-run)
-7. [Glossary of C++ Concepts](#-glossary-of-c-concepts)
 
 ---
 
@@ -213,41 +212,3 @@ g++ -std=c++17 -o cdn_sim.exe main.cpp Client.cpp Cache.cpp EdgeServer.cpp Origi
 ```bash
 .\cdn_sim.exe
 ```
-
----
-
-## 📚 Glossary of C++ Concepts
-
-| Concept | What it means | Where it's used |
-|---|---|---|
-| **Class** | A blueprint for creating objects with data and methods | Cache, Client, EdgeServer, etc. |
-| **Object** | An instance of a class | `EdgeServer edge1(1, "Mumbai", 5);` |
-| **Constructor** | Special method called when an object is created | `Cache(int size)` |
-| **Include Guards** | `#ifndef/#define/#endif` — prevents double-including a header | Every `.h` file |
-| **unordered_map** | A hash table: fast key→value lookups | `files`, `cityToEdge` |
-| **list** | Doubly-linked list: fast insert/remove at any position | `accessOrder` in Cache |
-| **vector** | Dynamic array that can grow | `requestLogs` in Statistics |
-| **map** | Ordered key→value container | `edges` in main.cpp |
-| **Pointer (`*`)** | A variable that stores a memory address | `EdgeServer* edge` |
-| **Reference (`&`)** | An alias for another variable | `OriginServer& origin` |
-| **`this->`** | Pointer to the current object | `this->city = city;` |
-| **`->`** | Access member through a pointer | `edge->hasFile(filename)` |
-| **Composition** | A class containing another class as a member | EdgeServer contains Cache |
-| **Namespace** | A named scope to group related functions | `Utils::printBanner()` |
-| **auto** | Let the compiler deduce the type | `for (auto& pair : files)` |
-| **Initializer List** | Set member values before constructor body runs | `EdgeServer(...) : id(id), cache(cap)` |
-| **Forward Declaration** | Tell compiler a function exists before defining it | `void handleRequest(...);` |
-| **Preprocessor Directives** | `#ifdef`, `#ifndef` — compile-time checks | `#ifdef __MINGW32__` |
-| **ANSI Escape Codes** | Special sequences for colored terminal output | `\033[32m` = green |
-| **LRU** | Least Recently Used — eviction policy for caches | Cache class |
-| **Sentinel Value** | A special value meaning "not found" | `-1` from `getNearestEdge()` |
-
----
-
-> [!TIP]
-> **Best way to learn from this project:**
-> 1. Read this documentation alongside the actual code files
-> 2. Run the simulator and try all 10 menu options
-> 3. Run the batch simulation and observe which requests are HITs vs MISSes
-> 4. Try modifying the cache capacity (change `5` to `3`) and see how eviction behavior changes
-> 5. Add a new city and edge server to the system
